@@ -1,0 +1,22 @@
+version: '3'
+
+volumes:
+  db_data: {}
+
+networks:
+  default:
+    name: app_network
+
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres

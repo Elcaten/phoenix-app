@@ -1,0 +1,10 @@
+image:
+    file: .gitpod.Dockerfile
+
+tasks:
+    - name: Launch DB
+      init: |
+          docker pull  
+          docker-compose up -d
+      command: echo started!
+
